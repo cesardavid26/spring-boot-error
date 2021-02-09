@@ -2,6 +2,7 @@ package com.springboot.error.app.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,6 @@ import com.springboot.error.app.models.domain.Usuario;
 public class UsuarioServiceImpl implements UsuarioService {
 
 	private List<Usuario> lista;
-	
 	
 
 	public UsuarioServiceImpl() {
@@ -42,6 +42,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 		}
 		
 		return resultado;
+	}
+
+	@Override
+	public Optional<Usuario> obtenerById(Integer id) {
+		Usuario usuario =  getById(id);
+		return Optional.ofNullable(usuario);
 	}
 
 }
