@@ -35,7 +35,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		Usuario resultado = null;
 		
 		for(Usuario u: this.lista) {
-			u.getId().equals(id){
+			if(u.getId().equals(id)) {
 				resultado = u;
 				break;
 			}
